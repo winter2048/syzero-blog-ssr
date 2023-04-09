@@ -10,7 +10,7 @@
     "build": "cross-env NODE_ENV=pro nuxt build",
     "start": "cross-env NODE_ENV=pro nuxt start",
     "start:dev": "cross-env NODE_ENV=test nuxt start",
-    "generate": "nuxt generate"
+    "generate": "cross-env NODE_ENV=pro nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.0.0",

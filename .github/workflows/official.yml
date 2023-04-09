@@ -36,15 +36,13 @@ jobs:
           name: build
           path: |
             ./*
+            !./node_modules/*
 
   pushImage:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Download build artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: build
+      - uses: actions/checkout@v3
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
