@@ -1,4 +1,6 @@
 
+import env from './env'
+
 export default {
   mode: 'universal',
   srcDir: 'src/',
@@ -19,6 +21,10 @@ export default {
       { rel: 'stylesheet', href: 'http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css' },
       {rel:'stylesheet',href:'https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/styles/agate.min.css'}
     ]
+  },
+  env: {
+    baseUrl: env[process.env.NODE_ENV].BASE_API,
+    NODE_ENV: env[process.env.NODE_ENV].NODE_ENV
   },
   /*
   ** Customize the progress-bar color

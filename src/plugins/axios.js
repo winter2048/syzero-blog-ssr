@@ -2,6 +2,7 @@
 import axios from 'axios'
 import store from '@/store'
 import cookies from '@/plugins/js-cookie.js'
+import env from '../../env'
 // import { Message } from 'element-ui'
 // import cookies from '@/utils/util.cookies'
 // import store from '../../store'
@@ -24,7 +25,7 @@ import cookies from '@/plugins/js-cookie.js'
 
 // 创建一个 axios 实例
 const service = axios.create({
-  baseURL: store().state.apiBaseURL,
+  baseURL: process.env.baseUrl,
   timeout: 5000 // 请求超时时间
 })
 

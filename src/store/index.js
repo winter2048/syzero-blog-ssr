@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import cookie from 'cookie'
+import env from '../../env'
 
 Vue.use(Vuex)
 const state = {
@@ -11,8 +12,6 @@ const state = {
   UserList: [111, 222, 333], //用户列表
   themeObj: 0,//主题
   aboutmeObj: '',//关于我的信息
-  apiBaseURL: "http://localhost:5002",//接口路径
-  //apiBaseURL: "http://localhost:53872",//接口路径
   Key: '',//关键词
   errorImg: '',
   seoBlog: '',
