@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    k8s.kuboard.cn/layer: web
+  name: blog-ssr
+  namespace: blog
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: blog
+      app: ssr
+  template:
+    metadata:
+      labels:
+        project: blog
+        app: ssr
+    spec:
+      imagePullSecrets:
+      - name: registry-pull-secret
+      containers:
+      - name: ssr
+        image: $IMAGE_NAME
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+          name: web
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blog-ssr
+  namespace: blog
+  labels:
+    project: blog
+    app: ssr
+spec:
+  selector:
+    project: blog
+    app: ssr
+  ports:
+  - name: web
+    port: 3000
+    targetPort: 3000
+    protocol: TCP
+    nodePort: 30004
+  type: NodePort

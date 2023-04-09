@@ -1,0 +1,11 @@
+.page-leave-active {
+  transition: all 0.3s;
+
+
+}
+
+
+.page-leave-active {
+  opacity: 0.3;
+
+}
