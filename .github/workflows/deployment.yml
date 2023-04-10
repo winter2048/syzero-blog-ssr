@@ -56,4 +56,4 @@ jobs:
             docker stop syzero.blog.ssr
             docker rm syzero.blog.ssr
             docker pull harbor.syzero.com/syzero/syzero.blog.ssr:${{ env.IMAGE_VERSION }}
-            docker run -d -p 6002:80 --name=syzero.blog.ssr harbor.syzero.com/syzero/syzero.blog.ssr:${{ env.IMAGE_VERSION }}
+            docker run -d -p 6002:3000 --name=syzero.blog.ssr harbor.syzero.com/syzero/syzero.blog.ssr:${{ env.IMAGE_VERSION }}
