@@ -5,9 +5,11 @@ COPY . /app
 WORKDIR /app
 
 ENV HOST "0.0.0.0"
-
-RUN npm install
-RUN npm run build
+ENV UI_ENVIRONMENT Production
 
 EXPOSE 3000
-CMD ["npm", "start"]
+
+RUN npm install
+RUN chmod +x ./start.sh
+
+CMD ["bash", "./start.sh"]
