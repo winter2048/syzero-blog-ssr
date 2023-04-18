@@ -5,11 +5,11 @@
   "author": "syzero",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev nuxt",
-    "dev:pro": "cross-env NODE_ENV=pro nuxt",
-    "build": "cross-env NODE_ENV=pro nuxt build",
-    "start": "cross-env NODE_ENV=pro nuxt start",
-    "start:dev": "cross-env NODE_ENV=test nuxt start",
+    "dev": "cross-env UI_ENVIRONMENT=Dev nuxt",
+    "dev:test": "cross-env UI_ENVIRONMENT=Test nuxt",
+    "build": "nuxt build",
+    "start": "cross-env UI_ENVIRONMENT=Production nuxt build && cross-env UI_ENVIRONMENT=Production nuxt start",
+    "start:test": "cross-env UI_ENVIRONMENT=Test nuxt build && cross-env UI_ENVIRONMENT=Test nuxt start",
     "generate": "cross-env NODE_ENV=pro nuxt generate"
   },
   "dependencies": {

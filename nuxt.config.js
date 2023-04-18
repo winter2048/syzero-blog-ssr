@@ -22,10 +22,7 @@ export default {
       {rel:'stylesheet',href:'https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/styles/agate.min.css'}
     ]
   },
-  env: {
-    baseUrl: env[process.env.NODE_ENV].BASE_API,
-    NODE_ENV: env[process.env.NODE_ENV].NODE_ENV
-  },
+  env: env[process.env.UI_ENVIRONMENT],
   /*
   ** Customize the progress-bar color
   */
