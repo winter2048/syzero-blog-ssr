@@ -5,10 +5,10 @@ module.exports = {
     },
     // 测试环境
     Test: {
-      BASE_API: 'http://192.168.2.130:5003' // 测试服务器地址
+      BASE_API: 'https://api.test.syzero.com' // 测试服务器地址
     },
     // 生产环境
     Production: {
-      BASE_API: 'http://192.168.2.120:5003' // 正式服务器地址
+      BASE_API: 'https://api.syzero.com' // 正式服务器地址
     }
   }
