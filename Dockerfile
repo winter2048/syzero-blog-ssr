@@ -1,4 +1,4 @@
-FROM node:16.7.0
+FROM node:22.12.0
 
 RUN mkdir -p /app
 COPY . /app
